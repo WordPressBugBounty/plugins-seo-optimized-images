@@ -1,11 +1,11 @@
-=== Seo Optimized Images ===
+=== SEO Optimized Images ===
 
 Contributors:       priyanshu.mittal
-Tags:               seo, images, seo for images, alt , alt tag, alt attribute, traffic, title tag, traffic, title attribute, seo optimization, optimization, image optimization, cool seo, search engine optimized images, search engine optimization, seo friendly images, seo friendly images plugin, google search optimized images, search friendly
-Requires at least:  3.3+
+Tags:               alt text, alt tag, image seo, image title, accessibility
+Requires at least:  3.6
 Requires PHP:       5.2
-Tested up to:       6.6
-Stable tag:         2.1.7
+Tested up to:       7.1
+Stable tag:         2.2
 License:            GPLv2 or later
 License URI:        http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -56,6 +56,10 @@ Follow link to purchase premium version
 
 
 == Changelog ==
+= 2.2 =
+1. Updated code to latest WordPress Standards and Freemius SDK.
+= 2.1.8 =
+1. Updated freemius directory.
 = 2.1.7 =
 1. Corrected sanitization and escaping.
 = 2.1.6 =

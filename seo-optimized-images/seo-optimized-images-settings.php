@@ -8,15 +8,27 @@ $default_options_data = array (
 );      
 // If there is no option setting in DB then assign default data to soi option array..      
 $soi_options_array = wp_parse_args(get_option('soi_options_values'), $default_options_data); 
-if(isset($_POST['submit_general_settings_tab'])) {
-	if(!isset($_POST['general_settings_nonce']) || !wp_verify_nonce($_POST['general_settings_nonce'], 'general_settings_action')) {
-		wp_die(esc_html__('Nonce verification failed', 'seo-optimized-images'));
+if (isset($_POST['submit_general_settings_tab'])) {
+    if (!isset($_POST['general_settings_nonce']) || !wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['general_settings_nonce'])), 'general_settings_action')) {
+        wp_die(esc_html__('Nonce verification failed', 'seo-optimized-images'));
     }
-	$soi_options_array['soi_alt_value'] = wp_kses_post($_POST['soi_alt_value']);
-	$soi_options_array['soi_title_value'] = wp_kses_post($_POST['soi_title_value']);
-	$soi_options_array['soi_override_alt_value'] = wp_kses_post($_POST['soi_override_alt_value']);
-	$soi_options_array['soi_override_title_value'] = wp_kses_post($_POST['soi_override_title_value']);
-	update_option ('soi_options_values', $soi_options_array );
+
+    if (isset($_POST['soi_alt_value'])) {
+        $soi_options_array['soi_alt_value'] = wp_kses_post(wp_unslash($_POST['soi_alt_value']));
+    }
+
+    if (isset($_POST['soi_title_value'])) {
+        $soi_options_array['soi_title_value'] = wp_kses_post(wp_unslash($_POST['soi_title_value']));
+    }
+
+    if (isset($_POST['soi_override_alt_value'])) {
+        $soi_options_array['soi_override_alt_value'] = wp_kses_post(wp_unslash($_POST['soi_override_alt_value']));
+    }
+
+    if (isset($_POST['soi_override_title_value'])) {
+        $soi_options_array['soi_override_title_value'] = wp_kses_post(wp_unslash($_POST['soi_override_title_value']));
+    }
+    update_option('soi_options_values', $soi_options_array);
 }
 ?>
 <div class="wrap settings-wrap" id="page-settings">

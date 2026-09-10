@@ -5,10 +5,10 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 * Plugin Name:          SEO Optimized Images
 * Plugin URI:           https://webriti.com
 * Description:          The **SEO Optimized Images** plugin lets you dynamically insert SEO Friendly alt attributes and title attributes to your Images. Simply activate the plugin, provide the pattern, and you are ready to go. 
-* Version:              2.1.7
-* Requires at least:    3.3+
+* Version:              2.2
+* Requires at least:    3.6
 * Requires PHP:         5.2
-* Tested up to:         6.6
+* Tested up to:         7.1
 * Author:               priyanshu.mittal
 * Author URI:           https://webriti.com
 * License:              GPLv2 or later
