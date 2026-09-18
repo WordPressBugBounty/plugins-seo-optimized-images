@@ -5,7 +5,7 @@ Tags:               alt text, alt tag, image seo, image title, accessibility
 Requires at least:  3.6
 Requires PHP:       5.2
 Tested up to:       7.1
-Stable tag:         2.2
+Stable tag:         2.2.1
 License:            GPLv2 or later
 License URI:        http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -56,6 +56,9 @@ Follow link to purchase premium version
 
 
 == Changelog ==
+
+= 2.2.1 =
+1. Updated FAQ and Upgrade to PRO tab pages.
 = 2.2 =
 1. Updated code to latest WordPress Standards and Freemius SDK.
 = 2.1.8 =

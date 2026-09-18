@@ -165,47 +165,85 @@ if (isset($_POST['submit_general_settings_tab'])) {
 	         						</div>
 	        					</div>
 	    					</div>
-							<div id="section_faq" class = "postbox">
-							    <div class="inside">
-							        <div class="format-settings">
-							            <div class="format-setting-wrap">
-							                <div class="format-setting-label">
-							                	<h3 class="label"><?php esc_html_e('How does it work?','seo-optimized-images');?> </h3>
-							                </div>
-							            </div>
-							        </div>                     
-							    	<p><span class="description"><?php esc_html_e('1. The plugin dynamically replaces the alt tags with the pattern specified by you. It makes no changes to the database.','seo-optimized-images'); ?>   </span></p>
-							    	<p><span class="description"><?php esc_html_e('2. Since there are no changes to the database, one can have different alt tags for same images on different pages/posts.','seo-optimized-images'); ?></span></p>
-							    	<p><span class="description">3. %name - <?php esc_html_e('Will insert image name.','seo-optimized-images'); ?></span></p>
-							    	<p><span class="description">4. %title- <?php esc_html_e('Will insert post title.','seo-optimized-images'); ?></span></p>
-							    	<p><span class="description">5. %category - <?php esc_html_e('Will insert post categories.','seo-optimized-images'); ?>  </span></p>                
-								</div>		
-							  	<div class="inside">
-							        <div class="format-settings">
-							            <div class="format-setting-wrap">
-							                <div class="format-setting-label">
-							                	<h3 class="label"> <?php esc_html_e('Why optimize alt tags?','seo-optimized-images');?> </h3>
-							                </div>
-							            </div>
-							        </div>                
-							    	<p><span class="description">
-										<?php 
-										echo wp_kses(sprintf(
-											// Translators: %s is the URL to learn about alt attribute.
-												__('1. According to <a target="_blank" href="%s">this post</a> on the Google Webmaster Blog, Google tends to focus on the information in the ALT text. Creating optimized alt tags can bring more traffic from Search Engines', 'seo-optimized-images'),
-												esc_url('http://googlewebmastercentral.blogspot.in/2007/12/using-alt-attributes-smartly.html')
-											),
-											array(
-												'a' => array(
-													'href' => array(),
-													'target' => array(),
-												)
-											)
-										);
-									?>
-									</span></p>
-							    	<p><span class="description"><?php esc_html_e('2. Take note that the plugin does not make changes to the database. It dynamically replaces the tags at the times of page load.','seo-optimized-images'); ?></span></p>         
-								</div>			
+							<div id="section_faq" class="postbox">
+								<div class="inside seo-optimized-images-faq">
+
+									<div class="faq-item">
+										<h3 class="faq-question">
+											<?php esc_html_e( 'Does this change my database?', 'seo-optimized-images' ); ?>
+										</h3>
+
+										<p>
+											<?php esc_html_e( 'No. Nothing is written to your database. The plugin fills in the alt and title attributes when the page loads, so your original data is never touched and you can reverse everything at any time.', 'seo-optimized-images' ); ?>
+										</p>
+									</div>
+
+									<div class="faq-item">
+										<h3 class="faq-question">
+											<?php esc_html_e( 'What happens if I deactivate the plugin?', 'seo-optimized-images' ); ?>
+										</h3>
+
+										<p>
+											<?php esc_html_e( 'Your site reverts to exactly how it was. There is no cleanup to do and no leftover data to remove, because nothing was ever saved.', 'seo-optimized-images' ); ?>
+										</p>
+									</div>
+
+									<div class="faq-item">
+										<h3 class="faq-question">
+											<?php esc_html_e( 'How does it work?', 'seo-optimized-images' ); ?>
+										</h3>
+
+										<p>
+											<?php esc_html_e('You set a pattern once in General Settings. The plugin applies it to the alt and title attributes of every image across your site. Because nothing is stored, the same image can carry different alt and title text on different pages — which no plugin that writes to the database can do.', 'seo-optimized-images' ); ?>
+										</p>
+
+										<div class="faq-placeholders">
+											<div class="faq-placeholder-title">
+												<?php esc_html_e( 'Available placeholders', 'seo-optimized-images' ); ?>
+											</div>
+
+											<div class="faq-placeholder">
+												<code>%name</code>
+												<span><?php esc_html_e( 'image name', 'seo-optimized-images' ); ?></span>
+											</div>
+
+											<div class="faq-placeholder">
+												<code>%title</code>
+												<span><?php esc_html_e( 'post title', 'seo-optimized-images' ); ?></span>
+											</div>
+
+											<div class="faq-placeholder">
+												<code>%category</code>
+												<span><?php esc_html_e( 'post categories', 'seo-optimized-images' ); ?></span>
+											</div>
+										</div>
+									</div>
+
+									<div class="faq-item">
+										<h3 class="faq-question">
+											<?php esc_html_e( 'Why do alt and title attributes matter?', 'seo-optimized-images' ); ?>
+										</h3>
+
+										<p>
+											<?php esc_html_e( 'Alt text is what screen readers read out to people who cannot see an image, and what search engines use to understand what the image shows. The WebAIM Million 2026 report found that 53.1% of websites have at least one image with no alt text, making it one of the most common accessibility failures on the web.', 'seo-optimized-images' ); ?>
+										</p>
+
+										<p>
+											<?php esc_html_e( 'Title attributes show as a tooltip when someone hovers over an image, and give you a second place to describe it. This plugin sets both, so you do not have to handle them separately.', 'seo-optimized-images' ); ?>
+										</p>
+									</div>
+
+									<div class="faq-item">
+										<h3 class="faq-question">
+											<?php esc_html_e( 'Will it slow down my site?', 'seo-optimized-images' ); ?>
+										</h3>
+
+										<p>
+											<?php esc_html_e( 'No. The attributes are filled in as the page renders, with no extra database queries.', 'seo-optimized-images' ); ?>
+										</p>
+									</div>
+
+								</div>
 							</div>
 							<div id="section_support" class = "postbox">
 							    <div class="inside">
@@ -250,59 +288,138 @@ if (isset($_POST['submit_general_settings_tab'])) {
 									</span></p>               
 								</div>
 							</div>
-							<div id="section_other" class = "postbox">
-						        <div class="inside">
-						            <div class="format-settings">
-						                <div class="format-setting-wrap">
-						                    <div class="format-setting-label">
-						                    	<h3 class="label"><?php esc_html_e('Upgrade to PRO','seo-optimized-images'); ?> </h3>
-						                    </div>
-						                </div>
-						            </div>
-									<div class="row" style="margin-left:10px;background: #f7f7f7;padding-top: 10px;padding-bottom: 70px;">
-										<div class="span6" style="width:85%;margin-top: auto;">
-											<h3><?php esc_html_e('Pricing','seo-optimized-images'); ?></h3>
-											<p> <?php esc_html_e('We have 2 packages','seo-optimized-images'); ?></p> 
-											<ul>
-												<li class="ui-corner-left">
-													<h3><?php esc_html_e('SEO - Business package','seo-optimized-images'); ?></h3>
-													<p>
-													<?php echo wp_kses(sprintf(__('The package supports <b>Featured Images, Custom Post Images, and Custom Rules.</b> The price of this package is <b>$69</b>.', 'seo-optimized-images')), array('b' => array()));
-													?>
-												    </p>
-												</li> 
-												<li class="ui-corner-left">
-													<h3><?php esc_html_e('SEO - Business with WooCommerce package','seo-optimized-images'); ?></h3>
-													<p>
-													<?php echo wp_kses(sprintf(__('The package supports <b>WooCommerce Images, Featured Images, Custom Post Images, and Custom Rules.</b> The price of this package is <b>$89</b>.', 'seo-optimized-images')), array('b' => array()));
-													?>
-													</p>
-												</li>
-											</ul>
-											<p>
-											<?php echo wp_kses(sprintf(__('Support and updates will be given for 1 year.<br>If you need updates and support after one year, then simply renew your subscription. If not, then you may still keep using the plugin.', 'seo-optimized-images')), array('br' => array()));
-											?>
-											</p>
-											<h3><?php esc_html_e('How to purchase','seo-optimized-images'); ?></h3>
-											<p>
-												<?php echo wp_kses(sprintf(
-													// Translators: %1$s is the URL to buy the plugin, %2$s is the URL to login to the account.
-													__('If you are interested, buy the plugin <a href="%1$s" target="_blank">here</a>. Once the purchase is completed, <a href="%2$s" target="_blank">login</a> to your account and download the latest package.', 'seo-optimized-images'),
-													esc_url('http://webriti.com/seo-optimized-images/'), esc_url('https://users.freemius.com/login')), array('a' => array('href' => array(), 'target' => array())));
-												?>
-											</p>
+							<div id="section_other" class="postbox">
+								<div class="inside seo-optimized-images-upgrade">
 
-											<h3><?php esc_html_e('Looking forward to work with you','seo-optimized-images'); ?></h3>
-											<p><?php esc_html_e('Thousands of users have enjoyed using our plugin.','seo-optimized-images'); ?></p>
-										</div>
+									<div class="upgrade-intro">
+										<h3>
+											<?php esc_html_e( 'Set your alt and title tags once. Applied across your whole site.', 'seo-optimized-images' ); ?>
+										</h3>
+
+										<p>
+											<?php esc_html_e( 'Without writing anything to your database. Reversible any time.', 'seo-optimized-images' ); ?>
+										</p>
 									</div>
-									<div class="row" style="margin-left:10px;background:#fff;text-align:center"></div>
-									<br><br><br>
-									<div style="text-align: center;">
-										<a class="btn btn-danger btn-large" href="<?php echo esc_url('http://webriti.com/seo-optimized-images/'); ?>" target="_new"> 
-										<?php esc_html_e('Upgrade to PRO version', 'seo-optimized-images'); ?>
-										</a>&nbsp;
-									</div> 
+
+									<div class="upgrade-comparison">
+										<table class="upgrade-table">
+											<thead>
+												<tr>
+													<th scope="col"></th>
+													<th scope="col">
+														<?php esc_html_e( 'Free', 'seo-optimized-images' ); ?>
+													</th>
+													<th scope="col">
+														<?php esc_html_e( 'Business', 'seo-optimized-images' ); ?>
+													</th>
+													<th scope="col">
+														<?php esc_html_e( '+ WooCommerce', 'seo-optimized-images' ); ?>
+													</th>
+												</tr>
+											</thead>
+
+											<tbody>
+
+												<tr>
+													<th scope="row">
+														<?php esc_html_e( 'Post and page images', 'seo-optimized-images' ); ?>
+													</th>
+													<td>
+														<span class="upgrade-check" aria-label="<?php esc_attr_e( 'Available', 'seo-optimized-images' ); ?>">✓</span>
+													</td>
+													<td>
+														<span class="upgrade-check" aria-label="<?php esc_attr_e( 'Available', 'seo-optimized-images' ); ?>">✓</span>
+													</td>
+													<td>
+														<span class="upgrade-check" aria-label="<?php esc_attr_e( 'Available', 'seo-optimized-images' ); ?>">✓</span>
+													</td>
+												</tr>
+
+												<tr>
+													<th scope="row">
+														<?php esc_html_e( 'Featured images', 'seo-optimized-images' ); ?>
+													</th>
+													<td>
+														<span class="upgrade-cross" aria-label="<?php esc_attr_e( 'Not available', 'seo-optimized-images' ); ?>">×</span>
+													</td>
+													<td>
+														<span class="upgrade-check" aria-label="<?php esc_attr_e( 'Available', 'seo-optimized-images' ); ?>">✓</span>
+													</td>
+													<td>
+														<span class="upgrade-check" aria-label="<?php esc_attr_e( 'Available', 'seo-optimized-images' ); ?>">✓</span>
+													</td>
+												</tr>
+
+												<tr>
+													<th scope="row">
+														<?php esc_html_e( 'Custom post types', 'seo-optimized-images' ); ?>
+													</th>
+													<td>
+														<span class="upgrade-cross" aria-label="<?php esc_attr_e( 'Not available', 'seo-optimized-images' ); ?>">×</span>
+													</td>
+													<td>
+														<span class="upgrade-check" aria-label="<?php esc_attr_e( 'Available', 'seo-optimized-images' ); ?>">✓</span>
+													</td>
+													<td>
+														<span class="upgrade-check" aria-label="<?php esc_attr_e( 'Available', 'seo-optimized-images' ); ?>">✓</span>
+													</td>
+												</tr>
+
+												<tr>
+													<th scope="row">
+														<?php esc_html_e( 'Custom rules', 'seo-optimized-images' ); ?>
+													</th>
+													<td>
+														<span class="upgrade-cross" aria-label="<?php esc_attr_e( 'Not available', 'seo-optimized-images' ); ?>">×</span>
+													</td>
+													<td>
+														<span class="upgrade-check" aria-label="<?php esc_attr_e( 'Available', 'seo-optimized-images' ); ?>">✓</span>
+													</td>
+													<td>
+														<span class="upgrade-check" aria-label="<?php esc_attr_e( 'Available', 'seo-optimized-images' ); ?>">✓</span>
+													</td>
+												</tr>
+
+												<tr>
+													<th scope="row">
+														<?php esc_html_e( 'WooCommerce product images', 'seo-optimized-images' ); ?>
+													</th>
+													<td>
+														<span class="upgrade-cross" aria-label="<?php esc_attr_e( 'Not available', 'seo-optimized-images' ); ?>">×</span>
+													</td>
+													<td>
+														<span class="upgrade-cross" aria-label="<?php esc_attr_e( 'Not available', 'seo-optimized-images' ); ?>">×</span>
+													</td>
+													<td>
+														<span class="upgrade-check" aria-label="<?php esc_attr_e( 'Available', 'seo-optimized-images' ); ?>">✓</span>
+													</td>
+												</tr>
+
+											</tbody>
+										</table>
+									</div>
+
+									<div class="upgrade-buttons">
+
+										<a class="upgrade-button" href="<?php echo esc_url( 'https://checkout.freemius.com/plugin/11446/plan/19501/?source=plugin_dashboard' ); ?>" target="_blank" rel="noopener noreferrer">
+											<?php esc_html_e( 'Business — $69 / year', 'seo-optimized-images' ); ?>
+										</a>
+
+										<a class="upgrade-button" href="<?php echo esc_url( 'https://checkout.freemius.com/plugin/11446/plan/19458/?source=plugin_dashboard' ); ?>" target="_blank" rel="noopener noreferrer">
+											<?php esc_html_e( '+ WooCommerce — $89 / year', 'seo-optimized-images' ); ?>
+										</a>
+
+									</div>
+
+									<div class="upgrade-guarantee">
+										<span class="upgrade-guarantee-icon" aria-hidden="true">✓</span>
+										<span><?php esc_html_e( '15-day money-back guarantee — not satisfied? Email us and we refund right away.', 'seo-optimized-images' ); ?></span>
+									</div>
+
+									<p class="upgrade-note">
+										<?php esc_html_e( 'Includes 1 year of updates and support. Keep using the plugin after that, or renew to continue receiving both.', 'seo-optimized-images'); ?>
+									</p>
+
 								</div>
 							</div>
 	        			</div>

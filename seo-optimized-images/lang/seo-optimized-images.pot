@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: SEO Optimized Images\n"
-"POT-Creation-Date: 2026-09-07 18:42+0530\n"
+"POT-Creation-Date: 2026-09-15 13:41+0530\n"
 "PO-Revision-Date: 2019-02-16 16:14+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -41,11 +41,11 @@ msgstr ""
 msgid "FAQ"
 msgstr ""
 
-#: seo-optimized-images-settings.php:51 seo-optimized-images-settings.php:215
+#: seo-optimized-images-settings.php:51 seo-optimized-images-settings.php:253
 msgid "Support"
 msgstr ""
 
-#: seo-optimized-images-settings.php:53 seo-optimized-images-settings.php:258
+#: seo-optimized-images-settings.php:53
 msgid "Upgrade to PRO"
 msgstr ""
 
@@ -57,15 +57,15 @@ msgstr ""
 msgid "The Alt attributes will be dynamically replaced by the above value."
 msgstr ""
 
-#: seo-optimized-images-settings.php:77 seo-optimized-images-settings.php:179
+#: seo-optimized-images-settings.php:77
 msgid "Will insert image name."
 msgstr ""
 
-#: seo-optimized-images-settings.php:78 seo-optimized-images-settings.php:180
+#: seo-optimized-images-settings.php:78
 msgid "Will insert post title."
 msgstr ""
 
-#: seo-optimized-images-settings.php:79 seo-optimized-images-settings.php:181
+#: seo-optimized-images-settings.php:79
 msgid "Will insert post categories."
 msgstr ""
 
@@ -141,110 +141,170 @@ msgid "Save Changes"
 msgstr ""
 
 #: seo-optimized-images-settings.php:173
-msgid "How does it work?"
+msgid "Does this change my database?"
 msgstr ""
 
 #: seo-optimized-images-settings.php:177
 msgid ""
-"1. The plugin dynamically replaces the alt tags with the pattern specified "
-"by you. It makes no changes to the database."
+"No. Nothing is written to your database. The plugin fills in the alt and "
+"title attributes when the page loads, so your original data is never touched "
+"and you can reverse everything at any time."
 msgstr ""
 
-#: seo-optimized-images-settings.php:178
-msgid ""
-"2. Since there are no changes to the database, one can have different alt "
-"tags for same images on different pages/posts."
+#: seo-optimized-images-settings.php:183
+msgid "What happens if I deactivate the plugin?"
 msgstr ""
 
 #: seo-optimized-images-settings.php:187
-msgid "Why optimize alt tags?"
+msgid ""
+"Your site reverts to exactly how it was. There is no cleanup to do and no "
+"leftover data to remove, because nothing was ever saved."
 msgstr ""
 
-#: seo-optimized-images-settings.php:195
-#, php-format
+#: seo-optimized-images-settings.php:193
+msgid "How does it work?"
+msgstr ""
+
+#: seo-optimized-images-settings.php:197
 msgid ""
-"1. According to <a target=\"_blank\" href=\"%s\">this post</a> on the Google "
-"Webmaster Blog, Google tends to focus on the information in the ALT text. "
-"Creating optimized alt tags can bring more traffic from Search Engines"
+"You set a pattern once in General Settings. The plugin applies it to the alt "
+"and title attributes of every image across your site. Because nothing is "
+"stored, the same image can carry different alt and title text on different "
+"pages — which no plugin that writes to the database can do."
+msgstr ""
+
+#: seo-optimized-images-settings.php:202
+msgid "Available placeholders"
 msgstr ""
 
 #: seo-optimized-images-settings.php:207
-msgid ""
-"2. Take note that the plugin does not make changes to the database. It "
-"dynamically replaces the tags at the times of page load."
+msgid "image name"
 msgstr ""
 
-#: seo-optimized-images-settings.php:223
+#: seo-optimized-images-settings.php:212
+msgid "post title"
+msgstr ""
+
+#: seo-optimized-images-settings.php:217
+msgid "post categories"
+msgstr ""
+
+#: seo-optimized-images-settings.php:224
+msgid "Why do alt and title attributes matter?"
+msgstr ""
+
+#: seo-optimized-images-settings.php:228
+msgid ""
+"Alt text is what screen readers read out to people who cannot see an image, "
+"and what search engines use to understand what the image shows. The WebAIM "
+"Million 2026 report found that 53.1% of websites have at least one image "
+"with no alt text, making it one of the most common accessibility failures on "
+"the web."
+msgstr ""
+
+#: seo-optimized-images-settings.php:232
+msgid ""
+"Title attributes show as a tooltip when someone hovers over an image, and "
+"give you a second place to describe it. This plugin sets both, so you do not "
+"have to handle them separately."
+msgstr ""
+
+#: seo-optimized-images-settings.php:238
+msgid "Will it slow down my site?"
+msgstr ""
+
+#: seo-optimized-images-settings.php:242
+msgid ""
+"No. The attributes are filled in as the page renders, with no extra database "
+"queries."
+msgstr ""
+
+#: seo-optimized-images-settings.php:261
 #, php-format
 msgid ""
 "1. For any queries contact us via the <a href='%s' target='_blank'>support "
 "forums</a>."
 msgstr ""
 
-#: seo-optimized-images-settings.php:239
+#: seo-optimized-images-settings.php:277
 #, php-format
 msgid ""
 "2. If you like our plugin and support, then kindly share your <a href=\"%s\" "
 "target=\"_blank\">feedback</a>. Your feedback is valuable."
 msgstr ""
 
-#: seo-optimized-images-settings.php:264
-msgid "Pricing"
-msgstr ""
-
-#: seo-optimized-images-settings.php:265
-msgid "We have 2 packages"
-msgstr ""
-
-#: seo-optimized-images-settings.php:268
-msgid "SEO - Business package"
-msgstr ""
-
-#: seo-optimized-images-settings.php:270
-msgid ""
-"The package supports <b>Featured Images, Custom Post Images, and Custom "
-"Rules.</b> The price of this package is <b>$69</b>."
-msgstr ""
-
-#: seo-optimized-images-settings.php:275
-msgid "SEO - Business with WooCommerce package"
-msgstr ""
-
-#: seo-optimized-images-settings.php:277
-msgid ""
-"The package supports <b>WooCommerce Images, Featured Images, Custom Post "
-"Images, and Custom Rules.</b> The price of this package is <b>$89</b>."
-msgstr ""
-
-#: seo-optimized-images-settings.php:283
-msgid ""
-"Support and updates will be given for 1 year.<br>If you need updates and "
-"support after one year, then simply renew your subscription. If not, then "
-"you may still keep using the plugin."
-msgstr ""
-
-#: seo-optimized-images-settings.php:286
-msgid "How to purchase"
-msgstr ""
-
-#: seo-optimized-images-settings.php:290
-#, php-format
-msgid ""
-"If you are interested, buy the plugin <a href=\"%1$s\" "
-"target=\"_blank\">here</a>. Once the purchase is completed, <a href=\"%2$s\" "
-"target=\"_blank\">login</a> to your account and download the latest package."
-msgstr ""
-
-#: seo-optimized-images-settings.php:295
-msgid "Looking forward to work with you"
-msgstr ""
-
 #: seo-optimized-images-settings.php:296
-msgid "Thousands of users have enjoyed using our plugin."
+msgid "Set your alt and title tags once. Applied across your whole site."
 msgstr ""
 
-#: seo-optimized-images-settings.php:303
-msgid "Upgrade to PRO version"
+#: seo-optimized-images-settings.php:300
+msgid "Without writing anything to your database. Reversible any time."
+msgstr ""
+
+#: seo-optimized-images-settings.php:310
+msgid "Free"
+msgstr ""
+
+#: seo-optimized-images-settings.php:313
+msgid "Business"
+msgstr ""
+
+#: seo-optimized-images-settings.php:316
+msgid "+ WooCommerce"
+msgstr ""
+
+#: seo-optimized-images-settings.php:325
+msgid "Post and page images"
+msgstr ""
+
+#: seo-optimized-images-settings.php:328 seo-optimized-images-settings.php:331
+#: seo-optimized-images-settings.php:334 seo-optimized-images-settings.php:346
+#: seo-optimized-images-settings.php:349 seo-optimized-images-settings.php:361
+#: seo-optimized-images-settings.php:364 seo-optimized-images-settings.php:376
+#: seo-optimized-images-settings.php:379 seo-optimized-images-settings.php:394
+msgid "Available"
+msgstr ""
+
+#: seo-optimized-images-settings.php:340
+msgid "Featured images"
+msgstr ""
+
+#: seo-optimized-images-settings.php:343 seo-optimized-images-settings.php:358
+#: seo-optimized-images-settings.php:373 seo-optimized-images-settings.php:388
+#: seo-optimized-images-settings.php:391
+msgid "Not available"
+msgstr ""
+
+#: seo-optimized-images-settings.php:355
+msgid "Custom post types"
+msgstr ""
+
+#: seo-optimized-images-settings.php:370
+msgid "Custom rules"
+msgstr ""
+
+#: seo-optimized-images-settings.php:385
+msgid "WooCommerce product images"
+msgstr ""
+
+#: seo-optimized-images-settings.php:405
+msgid "Business — $69 / year"
+msgstr ""
+
+#: seo-optimized-images-settings.php:409
+msgid "+ WooCommerce — $89 / year"
+msgstr ""
+
+#: seo-optimized-images-settings.php:416
+msgid ""
+"15-day money-back guarantee — not satisfied? Email us and we refund right "
+"away."
+msgstr ""
+
+#: seo-optimized-images-settings.php:420
+msgid ""
+"Includes 1 year of updates and support. Keep using the plugin after that, or "
+"renew to continue receiving both."
 msgstr ""
 
 #. Plugin URI of the plugin/theme
